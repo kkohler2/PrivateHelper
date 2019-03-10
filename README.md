@@ -1,5 +1,7 @@
 # Private Helper
 
+PrivateHelper is a library intended for unit test purposes to allow access to private properties.  This allows for a clean public interface, while allowing unit tests to get to internal values via private properties.
+
 ## 1.0 Release Notes
 
 Initial Version - supports private properties
@@ -10,8 +12,6 @@ Initial Version - supports private properties
 ### Master build
 
 [![Build Status](https://kkohler.visualstudio.com/PrivateHelper/_apis/build/status/kkohler2.PrivateHelper?branchName=master)](https://kkohler.visualstudio.com/PrivateHelper/_build/latest?definitionId=1&branchName=master)
-
-PrivateHelper is a library intended for unit test purposes to allow access to private properties.  This allows for a clean public interface, while allowing unit tests to get to internal values via private properties.
 
 ## Getting Started
 
