@@ -63,5 +63,21 @@ namespace UnitTests
             instance.SetValue(testValue2);
             Assert.Equal(testValue2, (int)PrivateHelper.GetProperty(instance, "Value"));
         }
+
+
+        [Fact]
+        public void GetTestByType()
+        {
+            int testValue = 12;
+
+            ITestClass instance = new TestClass();
+            Assert.Equal(0, instance.GetValue());
+            instance.SetValue(testValue);
+            Assert.Equal(testValue, instance.GetValue());
+
+
+            instance.SetValue(testValue);
+            Assert.Equal(testValue, PrivateHelper.GetProperty<int>(instance, "Value"));
+        }
     }
 }
