@@ -6,13 +6,9 @@ Initial Version - supports private properties
 
 
 
-### Pull request builds
-
-TBD
-
 ### Master build
 
-TBD
+[![Build Status](https://kkohler.visualstudio.com/PrivateHelper/_apis/build/status/kkohler2.PrivateHelper?branchName=master)](https://kkohler.visualstudio.com/PrivateHelper/_build/latest?definitionId=1&branchName=master)
 
 PrivateHelper is a helper library intended for unit test purposes
 
