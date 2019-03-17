@@ -2,11 +2,7 @@
 
 PrivateHelper is a library intended for unit test purposes to allow access to private properties.  This allows for a clean public interface, while allowing unit tests to get to internal values via private properties.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
-
-[![Build Status](https://kkohler.visualstudio.com/PrivateHelper/_apis/build/status/kkohler2.PrivateHelper?branchName=master)](https://kkohler.visualstudio.com/PrivateHelper/_build/latest?definitionId=1&branchName=master) 
-
-[![Open Issues](https://img.shields.io/github/issues-raw/kkohler2/PrivateHelper.svg)](https://github.com/kkohler2/PrivateHelper/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://kkohler.visualstudio.com/PrivateHelper/_apis/build/status/kkohler2.PrivateHelper?branchName=master)](https://kkohler.visualstudio.com/PrivateHelper/_build/latest?definitionId=1&branchName=master) [![Open Issues](https://img.shields.io/github/issues-raw/kkohler2/PrivateHelper.svg)](https://github.com/kkohler2/PrivateHelper/issues)
 
 ## 1.0 Release Notes
 
