@@ -1,7 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Ken Kohler</Authors>
+    <Company />
+    <Description>Utility library to</Description>
+    <Copyright>Copyright 2019 Ken Kohler</Copyright>
+    <PackageLicenseUrl>https://github.com/kkohler2/PrivateHelper/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl />
+    <RepositoryUrl>https://github.com/kkohler2/PrivateHelper</RepositoryUrl>
+    <RepositoryType>Library</RepositoryType>
+    <PackageTags>UnitTest Private Property</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>

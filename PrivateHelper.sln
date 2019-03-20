@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrivateHelper", "PrivateHelper\PrivateHelper.csproj", "{AD21A1D1-792B-49A4-A436-7B2A95AA03F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrivateHelper", "PrivateHelper\PrivateHelper.csproj", "{AD21A1D1-792B-49A4-A436-7B2A95AA03F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{DBAAED33-EECC-4C00-B72C-E1B005851AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{DBAAED33-EECC-4C00-B72C-E1B005851AF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{512BA4E4-3F89-40DA-9DFA-A40B0C303B34}"
+	ProjectSection(SolutionItems) = preProject
+		codecov.ps1 = codecov.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
