@@ -21,7 +21,7 @@ steps:
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
-    testRunner: VSTest
+    testRunner: xunit
     testResultsFiles: '**/*.trx'
 - powershell: .\codecov.ps1 -token $(CODECOV_TOKEN)
   displayName: Upload to CodeCov.io
