@@ -58,5 +58,43 @@ namespace UnitTestHelper
             }
             return (T)returnValue;
         }
+
+        public static void CallVoidMethod(object instance, string methodName, object[] parameters)
+        {
+            Type t = instance.GetType();
+
+            MethodInfo methodInfo = t.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (methodInfo == null)
+            {
+                throw new ArgumentException($"Get Property {methodInfo} not found.");
+            }
+            else if (methodInfo.IsStatic)
+            {
+                throw new ArgumentException($"Get Property {methodInfo} cannot be static.");
+            }
+            methodInfo.Invoke(instance, parameters);
+        }
+
+        public static T CallMethod<T>(object instance, string methodName, object[] parameters)
+        {
+            Type returnType = typeof(T);
+            Type t = instance.GetType();
+
+            MethodInfo methodInfo = t.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (methodInfo == null)
+            {
+                throw new ArgumentException($"Get Property {methodInfo} not found.");
+            }
+            else if (methodInfo.IsStatic)
+            {
+                throw new ArgumentException($"Get Property {methodInfo} cannot be static.");
+            }
+            var returnValue = methodInfo.Invoke(instance, parameters);
+            if (returnValue == null)
+            {
+                return default(T);
+            }
+            return (T)returnValue;
+        }
     }
 }

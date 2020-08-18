@@ -6,12 +6,25 @@
     <Company />
     <Description>Utility library to</Description>
     <Copyright>Copyright 2019 Ken Kohler</Copyright>
-    <PackageLicenseUrl>https://github.com/kkohler2/PrivateHelper/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/kkohler2/PrivateHelper</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>UnitTest Private Property</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <PackageReleaseNotes>Added method and async method support.</PackageReleaseNotes>
+    <Version>2.0.0</Version>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

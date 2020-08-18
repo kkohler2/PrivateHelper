@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnitTestHelper;
 using Xunit;
 
@@ -28,6 +30,27 @@ namespace UnitTests
         {
             get { return _value; }
             set { _value = value; }
+        }
+
+        private void SetMethod(int value)
+        {
+            _value = value;
+        }
+
+        private int GetMethod()
+        {
+            return _value;
+        }
+
+        private Task SetMethodAsync(int value)
+        {
+            _value = value;
+            return Task.CompletedTask;
+        }
+
+        private Task<int> GetMethodAsync()
+        {
+            return Task.FromResult(_value);
         }
     }
 
@@ -64,7 +87,6 @@ namespace UnitTests
             Assert.Equal(testValue2, (int)PrivateHelper.GetProperty(instance, "Value"));
         }
 
-
         [Fact]
         public void GetTestByType()
         {
@@ -78,6 +100,38 @@ namespace UnitTests
 
             instance.SetValue(testValue);
             Assert.Equal(testValue, PrivateHelper.GetProperty<int>(instance, "Value"));
+        }
+
+        [Fact]
+        public void MethodTest()
+        {
+            int testValue1 = 1256;
+            int testValue2 = 34653;
+
+            ITestClass instance = new TestClass();
+            instance.SetValue(testValue1);
+            Assert.Equal(testValue1, instance.GetValue());
+
+            List<object> parameters = new List<object> { testValue2 };
+            PrivateHelper.CallVoidMethod(instance, "SetMethod", parameters.ToArray());
+            Assert.Equal(testValue2, PrivateHelper.GetProperty<int>(instance, "Value"));
+            Assert.Equal(testValue2, PrivateHelper.CallMethod<int>(instance, "GetMethod", null));
+        }
+
+        [Fact]
+        public async void AsyncMethodTest()
+        {
+            int testValue1 = 1256;
+            int testValue2 = 34653;
+
+            ITestClass instance = new TestClass();
+            instance.SetValue(testValue1);
+            Assert.Equal(testValue1, instance.GetValue());
+
+            List<object> parameters = new List<object> { testValue2 };
+            await PrivateHelper.CallMethod<Task>(instance, "SetMethodAsync", parameters.ToArray());
+            Assert.Equal(testValue2, PrivateHelper.GetProperty<int>(instance, "Value"));
+            Assert.Equal(testValue2, await PrivateHelper.CallMethod<Task<int>>(instance, "GetMethodAsync", null));
         }
     }
 }
