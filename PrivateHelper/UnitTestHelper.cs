@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 
 namespace UnitTestHelper
@@ -10,6 +11,11 @@ namespace UnitTestHelper
             Type t = instance.GetType();
 
             PropertyInfo propertyInfo = t.GetProperty(propertyName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (propertyInfo == null)
+            {
+                var properties = t.GetProperties();
+                propertyInfo = properties.Where(x => x.Name == propertyName).SingleOrDefault();
+            }
             if (propertyInfo.SetMethod == null)
             {
                 throw new ArgumentException($"Set Property {propertyName} not found.");
@@ -26,6 +32,11 @@ namespace UnitTestHelper
             Type t = instance.GetType();
 
             PropertyInfo propertyInfo = t.GetProperty(propertyName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (propertyInfo == null)
+            {
+                var properties = t.GetProperties();
+                propertyInfo = properties.Where(x => x.Name == propertyName).SingleOrDefault();
+            }
             if (propertyInfo.GetMethod == null)
             {
                 throw new ArgumentException($"Get Property {propertyName} not found.");
@@ -43,6 +54,11 @@ namespace UnitTestHelper
             Type t = instance.GetType();
 
             PropertyInfo propertyInfo = t.GetProperty(propertyName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (propertyInfo == null)
+            {
+                var properties = t.GetProperties();
+                propertyInfo = properties.Where(x => x.Name == propertyName).SingleOrDefault();
+            }
             if (propertyInfo.GetMethod == null)
             {
                 throw new ArgumentException($"Get Property {propertyName} not found.");

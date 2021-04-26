@@ -5,17 +5,17 @@
     <Authors>Ken Kohler</Authors>
     <Company />
     <Description>Utility library to</Description>
-    <Copyright>Copyright 2019 Ken Kohler</Copyright>
+    <Copyright>Copyright 2019-21 Ken Kohler</Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryUrl>https://github.com/kkohler2/PrivateHelper</RepositoryUrl>
     <RepositoryType>Library</RepositoryType>
     <PackageTags>UnitTest Private Property</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
     <PackageReleaseNotes>Added method and async method support.</PackageReleaseNotes>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
