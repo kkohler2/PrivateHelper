@@ -18,8 +18,13 @@
     <Version>2.1.0</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-  </PropertyGroup>
+    </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+  
   <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
@@ -27,4 +32,14 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Reference this package to enable SourceLink used with the source control GitHub -->
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+
+      <RepositoryUrl>https://github.com/kkohler2/PrivateHelper.git</RepositoryUrl>
+      <RepositoryType>git</RepositoryType>
+    </PackageReference>
+  </ItemGroup>
 </Project>
