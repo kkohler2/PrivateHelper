@@ -13,9 +13,9 @@
     <PackageTags>UnitTest Private Property</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
-    <PackageReleaseNotes>Added method and async method support.</PackageReleaseNotes>
-    <Version>2.1.0</Version>
+    <FileVersion>2.2.0.0</FileVersion>
+    <PackageReleaseNotes>Added private static method support</PackageReleaseNotes>
+    <Version>2.2.0</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
@@ -34,7 +34,7 @@
 
   <ItemGroup>
     <!-- Reference this package to enable SourceLink used with the source control GitHub -->
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102" PrivateAssets="All">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 

@@ -1,7 +1,4 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnitTestHelper;
-using Xunit;
 
 namespace UnitTests
 {
@@ -13,6 +10,7 @@ namespace UnitTests
 
     public class TestClass : ITestClass
     {
+        private static int _staticValue;
         private int _value;
 
         public int GetValue()
@@ -51,6 +49,15 @@ namespace UnitTests
         private Task<int> GetMethodAsync()
         {
             return Task.FromResult(_value);
+        }
+
+        private static void StaticSetMethod(int value)
+        {
+            _staticValue = value;
+        }
+        private static int StaticGetMethodAsync()
+        {
+            return _staticValue;
         }
     }
 
@@ -119,7 +126,7 @@ namespace UnitTests
         }
 
         [Fact]
-        public async void AsyncMethodTest()
+        public async Task AsyncMethodTest()
         {
             int testValue1 = 1256;
             int testValue2 = 34653;
@@ -132,6 +139,21 @@ namespace UnitTests
             await PrivateHelper.CallMethod<Task>(instance, "SetMethodAsync", parameters.ToArray());
             Assert.Equal(testValue2, PrivateHelper.GetProperty<int>(instance, "Value"));
             Assert.Equal(testValue2, await PrivateHelper.CallMethod<Task<int>>(instance, "GetMethodAsync", null));
+        }
+
+        [Fact]
+        public void StaticMethodTest()
+        {
+            int testValue1 = 23424;
+
+            ITestClass instance = new TestClass();
+            instance.SetValue(testValue1);
+            Assert.Equal(testValue1, instance.GetValue());
+
+            List<object> parameters = new List<object> { testValue1 };
+            PrivateHelper.CallStaticVoidMethod(instance, "StaticSetMethod", parameters.ToArray());
+            int result = PrivateHelper.CallStaticMethod<int>(instance, "StaticGetMethodAsync", null);
+            Assert.Equal(testValue1, result);
         }
     }
 }
