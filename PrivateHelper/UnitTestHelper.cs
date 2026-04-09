@@ -6,6 +6,36 @@ namespace UnitTestHelper
 {
     public static class PrivateHelper
     {
+        public static void SetStaticField(object instance, string fieldName, object value)
+        {
+            SetStaticField(instance.GetType(), fieldName, value);
+        }
+
+        public static void SetStaticField(Type type, string fieldName, object value)
+        {
+            FieldInfo fieldInfo = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Static);
+            if (fieldInfo == null)
+            {
+                throw new ArgumentException($"Field {fieldName} not found.");
+            }
+            fieldInfo.SetValue(type, value);
+        }
+
+        public static T GetStaticField<T>(object instance, string fieldName)
+        { 
+            return GetStaticField<T>(instance.GetType(), fieldName);
+        }
+
+        public static T GetStaticField<T>(Type type, string fieldName)
+        {
+            FieldInfo fieldInfo = type.GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Static);
+            if (fieldInfo == null)
+            {
+                throw new ArgumentException($"Field {fieldName} not found.");
+            }
+            return (T)fieldInfo.GetValue(type);
+        }
+
         public static void SetProperty(object instance, string propertyName, object value)
         {
             Type t = instance.GetType();

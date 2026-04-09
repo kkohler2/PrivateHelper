@@ -64,6 +64,26 @@ namespace UnitTests
     public class UnitTest1
     {
         [Fact]
+        public void StaticFieldTest()
+        {
+            int testValue1 = 23;
+            ITestClass instance = new TestClass();
+            Assert.Equal(0, instance.GetValue());
+            PrivateHelper.SetStaticField(instance, "_staticValue", testValue1);
+            int result = PrivateHelper.GetStaticField<int>(instance, "_staticValue");
+            Assert.Equal(testValue1, result);
+        }
+
+        [Fact]
+        public void StaticFieldByTypeTest()
+        {
+            int testValue1 = 42;
+            PrivateHelper.SetStaticField(typeof(TestClass), "_staticValue", testValue1);
+            int result = PrivateHelper.GetStaticField<int>(typeof(TestClass), "_staticValue");
+            Assert.Equal(testValue1, result);
+        }
+
+        [Fact]
         public void SetTest()
         {
             int testValue1 = 23;
